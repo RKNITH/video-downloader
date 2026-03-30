@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VideoSnap — Save Videos Locally</title>
+  <meta name="server-mode" content="{{ server_mode }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="container">
+
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">⬇</span>
+        <span class="logo-text">VideoSnap</span>
+      </div>
+      <p class="tagline">Paste a link · Choose quality · Save to your device</p>
+    </header>
+
+    <main class="card">
+
+      <!-- URL Input -->
+      <div class="field">
+        <label class="field-label" for="urlInput">Video URL</label>
+        <input
+          type="url"
+          id="urlInput"
+          class="url-input"
+          placeholder="https://youtube.com/watch?v=..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </div>
+
+      <!-- Quality -->
+      <div class="field">
+        <label class="field-label">Quality / Format</label>
+        <div class="quality-options">
+          <label class="quality-chip">
+            <input type="radio" name="quality" value="best" checked />
+            <span>Best</span>
+          </label>
+          <label class="quality-chip">
+            <input type="radio" name="quality" value="720" />
+            <span>720p</span>
+          </label>
+          <label class="quality-chip">
+            <input type="radio" name="quality" value="480" />
+            <span>480p</span>
+          </label>
+          <label class="quality-chip">
+            <input type="radio" name="quality" value="360" />
+            <span>360p</span>
+          </label>
+          <label class="quality-chip">
+            <input type="radio" name="quality" value="audio" />
+            <span>🎵 MP3</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Download Button -->
+      <button class="btn-download" id="downloadBtn">
+        <span class="btn-icon" id="btnIcon">⬇</span>
+        <span id="btnText">Download</span>
+      </button>
+
+      <!-- Progress -->
+      <div class="progress-wrap" id="progressWrap" hidden>
+        <div class="progress-track">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="progress-row">
+          <span id="progressPct">0%</span>
+          <span id="progressStatus">Starting…</span>
+          <span id="progressSpeed"></span>
+        </div>
+      </div>
+
+      <!-- Error -->
+      <div class="banner banner-error" id="errorBanner" hidden>
+        <span class="banner-icon">⚠</span>
+        <span id="errorText"></span>
+        <button class="banner-close" id="errorClose">✕</button>
+      </div>
+
+      <!-- Success -->
+      <div class="banner banner-success" id="successBanner" hidden>
+        <span class="banner-icon">✓</span>
+        <span>File saved to your device!</span>
+        <button class="btn-again" id="againBtn">Download again</button>
+      </div>
+
+    </main>
+
+    <!-- Supported sites -->
+    <section class="platforms">
+      <p class="platforms-label">Works with</p>
+      <div class="platform-chips">
+        <span class="chip">YouTube</span>
+        <span class="chip">Facebook</span>
+        <span class="chip">Instagram</span>
+        <span class="chip">TikTok</span>
+        <span class="chip">Twitter / X</span>
+        <span class="chip">Vimeo</span>
+        <span class="chip">Dailymotion</span>
+        <span class="chip">Reddit</span>
+      </div>
+    </section>
+
+    <footer class="footer">
+      For personal use only · Respect platform Terms of Service
+    </footer>
+
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
